@@ -1,0 +1,1331 @@
+1).  How to compare two JSON have the same properties without order
+     (a).var obj1 = { name: "Person 1", age:5 };	
+     (b).var obj2 = { age:5, name: "Person 1" };
+
+
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+console.log(_.isEqual(obj1, obj2))
+
+
+output => true
+
+
+
+2).  Use the rest countries API and display all the country flags in console
+
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all");
+
+xhr.onload = function (){
+    if (xhr.status >= 200 && xhr.status <300){
+        let data = JSON.parse(this.response)
+        for(let i=0;i<data.length;i++){
+            let user = data[i]
+            console.log(user.flag)
+        }
+    }
+}
+xhr.send();
+
+
+
+output
+🇳🇨
+kiran.js:1255 🇧🇫
+kiran.js:1255 🇧🇦
+kiran.js:1255 🇯🇴
+kiran.js:1255 🇵🇷
+kiran.js:1255 🇬🇱
+kiran.js:1255 🇮🇷
+kiran.js:1255 🇱🇸
+kiran.js:1255 🇱🇻
+kiran.js:1255 🇲🇬
+kiran.js:1255 🇨🇾
+kiran.js:1255 🇲🇺
+kiran.js:1255 🇸🇿
+kiran.js:1255 🇸🇧
+kiran.js:1255 🇦🇹
+kiran.js:1255 🇻🇦
+kiran.js:1255 🇲🇼
+kiran.js:1255 🇧🇼
+kiran.js:1255 🇩🇯
+kiran.js:1255 🇨🇬
+kiran.js:1255 🇧🇧
+kiran.js:1255 🇸🇽
+kiran.js:1255 🇷🇼
+kiran.js:1255 🇯🇪
+kiran.js:1255 🇧🇻
+kiran.js:1255 🇾🇪
+kiran.js:1255 🇧🇷
+kiran.js:1255 🇩🇿
+kiran.js:1255 🇰🇿
+kiran.js:1255 🇲🇫
+kiran.js:1255 🇨🇼
+kiran.js:1255 🇫🇯
+kiran.js:1255 🇵🇰
+kiran.js:1255 🇬🇸
+kiran.js:1255 🇬🇪
+kiran.js:1255 🇳🇦
+kiran.js:1255 🇬🇼
+kiran.js:1255 🇳🇴
+kiran.js:1255 🇨🇽
+kiran.js:1255 🇱🇮
+kiran.js:1255 🇮🇳
+kiran.js:1255 🇫🇷
+kiran.js:1255 🇭🇰
+kiran.js:1255 🇦🇮
+kiran.js:1255 🇨🇴
+kiran.js:1255 🇮🇶
+kiran.js:1255 🇲🇦
+kiran.js:1255 🇱🇾
+kiran.js:1255 🇱🇨
+kiran.js:1255 🇲🇭
+kiran.js:1255 🇸🇱
+kiran.js:1255 🇨🇰
+kiran.js:1255 🇭🇷
+kiran.js:1255 🇹🇲
+kiran.js:1255 🇧🇹
+kiran.js:1255 🇬🇧
+kiran.js:1255 🇲🇨
+kiran.js:1255 🇵🇼
+kiran.js:1255 🇬🇦
+kiran.js:1255 🇩🇪
+kiran.js:1255 🇯🇵
+kiran.js:1255 🇳🇫
+kiran.js:1255 🇨🇫
+kiran.js:1255 🇲🇴
+kiran.js:1255 🇸🇾
+kiran.js:1255 🇲🇸
+kiran.js:1255 🇪🇸
+kiran.js:1255 🇬🇲
+kiran.js:1255 🇹🇨
+kiran.js:1255 🇹🇫
+kiran.js:1255 🇵🇲
+kiran.js:1255 🇳🇷
+kiran.js:1255 🇫🇴
+kiran.js:1255 🇻🇨
+kiran.js:1255 🇨🇦
+kiran.js:1255 🇪🇬
+kiran.js:1255 🇵🇬
+kiran.js:1255 🇬🇩
+kiran.js:1255 🇨🇿
+kiran.js:1255 🇬🇷
+kiran.js:1255 🇹🇬
+kiran.js:1255 🇦🇺
+kiran.js:1255 🇱🇺
+kiran.js:1255 🇳🇺
+kiran.js:1255 🇧🇭
+kiran.js:1255 🇳🇱
+kiran.js:1255 🇺🇿
+kiran.js:1255 🇭🇺
+kiran.js:1255 🇻🇬
+kiran.js:1255 🇿🇲
+kiran.js:1255 🇹🇭
+kiran.js:1255 🇲🇰
+kiran.js:1255 🇧🇱
+kiran.js:1255 🇳🇪
+kiran.js:1255 🇸🇴
+kiran.js:1255 🇨🇲
+kiran.js:1255 🇷🇺
+kiran.js:1255 🇧🇮
+kiran.js:1255 🇵🇸
+kiran.js:1255 🇲🇾
+kiran.js:1255 🇹🇿
+kiran.js:1255 🇰🇼
+kiran.js:1255 🇳🇬
+kiran.js:1255 🇨🇮
+kiran.js:1255 🇩🇰
+kiran.js:1255 🇱🇹
+kiran.js:1255 🇨🇻
+kiran.js:1255 🇦🇴
+kiran.js:1255 🇫🇮
+kiran.js:1255 🇵🇪
+kiran.js:1255 🇵🇫
+kiran.js:1255 🇵🇹
+kiran.js:1255 🇬🇭
+kiran.js:1255 🇲🇿
+kiran.js:1255 🇰🇮
+kiran.js:1255 🇦🇬
+kiran.js:1255 🇳🇿
+kiran.js:1255 🇵🇾
+kiran.js:1255 🇧🇿
+kiran.js:1255 🇲🇵
+kiran.js:1255 🇸🇮
+kiran.js:1255 🇦🇲
+kiran.js:1255 🇦🇪
+kiran.js:1255 🇦🇸
+kiran.js:1255 🇹🇱
+kiran.js:1255 undefined
+kiran.js:1255 🇲🇪
+kiran.js:1255 🇵🇱
+kiran.js:1255 🇵🇳
+kiran.js:1255 🇸🇰
+kiran.js:1255 🇧🇴
+kiran.js:1255 🇨🇱
+kiran.js:1255 🇦🇶
+kiran.js:1255 🇧🇩
+kiran.js:1255 🇲🇽
+kiran.js:1255 🇲🇳
+kiran.js:1255 🇮🇪
+kiran.js:1255 🇨🇺
+kiran.js:1255 🇬🇵
+kiran.js:1255 🇪🇪
+kiran.js:1255 🇸🇻
+kiran.js:1255 🇦🇫
+kiran.js:1255 🇺🇾
+kiran.js:1255 🇧🇾
+kiran.js:1255 🇨🇩
+kiran.js:1255 🇪🇭
+kiran.js:1255 🇬🇮
+kiran.js:1255 🇬🇺
+kiran.js:1255 🇦🇿
+kiran.js:1255 🇭🇹
+kiran.js:1255 🇲🇱
+kiran.js:1255 🇩🇴
+kiran.js:1255 🇸🇬
+kiran.js:1255 🇦🇷
+kiran.js:1255 🇮🇸
+kiran.js:1255 🇺🇸
+kiran.js:1255 🇯🇲
+kiran.js:1255 🇶🇦
+kiran.js:1255 🇴🇲
+kiran.js:1255 🇷🇴
+kiran.js:1255 🇹🇹
+kiran.js:1255 🇲🇻
+kiran.js:1255 🇸🇸
+kiran.js:1255 🇦🇼
+kiran.js:1255 🇫🇰
+kiran.js:1255 🇸🇹
+kiran.js:1255 🇦🇩
+kiran.js:1255 🇵🇦
+kiran.js:1255 🇦🇱
+kiran.js:1255 🇭🇳
+kiran.js:1255 🇾🇹
+kiran.js:1255 🇬🇶
+kiran.js:1255 🇭🇲
+kiran.js:1255 🇸🇳
+kiran.js:1255 🇰🇵
+kiran.js:1255 🇸🇲
+kiran.js:1255 🇮🇴
+kiran.js:1255 🇰🇪
+kiran.js:1255 🇱🇰
+kiran.js:1255 🇸🇭
+kiran.js:1255 🇱🇧
+kiran.js:1255 🇰🇲
+kiran.js:1255 🇲🇶
+kiran.js:1255 🇹🇼
+kiran.js:1255 🇰🇾
+kiran.js:1255 🇳🇮
+kiran.js:1255 🇻🇮
+kiran.js:1255 🇹🇰
+kiran.js:1255 🇨🇭
+kiran.js:1255 🇧🇬
+kiran.js:1255 🇹🇻
+kiran.js:1255 🇱🇦
+kiran.js:1255 🇧🇳
+kiran.js:1255 🇬🇬
+kiran.js:1255 🇳🇵
+kiran.js:1255 🇨🇷
+kiran.js:1255 🇰🇭
+kiran.js:1255 🇸🇦
+kiran.js:1255 🇬🇳
+kiran.js:1255 🇺🇲
+kiran.js:1255 🇽🇰
+kiran.js:1255 🇫🇲
+kiran.js:1255 🇮🇱
+kiran.js:1255 🇪🇷
+kiran.js:1255 🇰🇷
+kiran.js:1255 🇦🇽
+kiran.js:1255 🇷🇸
+kiran.js:1255 🇹🇴
+kiran.js:1255 🇻🇪
+kiran.js:1255 🇰🇬
+kiran.js:1255 🇼🇫
+kiran.js:1255 🇸🇩
+kiran.js:1255 🇧🇪
+kiran.js:1255 🇺🇦
+kiran.js:1255 🇻🇺
+kiran.js:1255 🇧🇲
+kiran.js:1255 🇹🇳
+kiran.js:1255 🇲🇷
+kiran.js:1255 🇮🇩
+kiran.js:1255 🇺🇬
+kiran.js:1255 🇮🇲
+kiran.js:1255 🇲🇲
+kiran.js:1255 🇨🇳
+kiran.js:1255 🇸🇯
+kiran.js:1255 🇸🇨
+kiran.js:1255 🇨🇨
+kiran.js:1255 🇿🇼
+kiran.js:1255 🇧🇯
+kiran.js:1255 🇪🇹
+kiran.js:1255 🇿🇦
+kiran.js:1255 🇬🇹
+kiran.js:1255 🇹🇩
+kiran.js:1255 🇱🇷
+kiran.js:1255 🇬🇫
+kiran.js:1255 🇲🇩
+kiran.js:1255 🇸🇷
+kiran.js:1255 🇧🇸
+kiran.js:1255 🇻🇳
+kiran.js:1255 🇰🇳
+kiran.js:1255 🇼🇸
+kiran.js:1255 🇩🇲
+kiran.js:1255 🇷🇪
+kiran.js:1255 🇪🇨
+kiran.js:1255 🇹🇯
+kiran.js:1255 🇵🇭
+kiran.js:1255 🇬🇾
+kiran.js:1255 🇹🇷
+kiran.js:1255 🇮🇹
+
+
+
+
+3).  Use the same rest countries and print all countries name, region, sub region and population
+
+
+(a).  countries name
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all");
+
+xhr.onload = function (){
+    if (xhr.status >= 200 && xhr.status <300){
+        let data = JSON.parse(this.response)
+        for(let i=0;i<data.length;i++){
+            let user = data[i]
+            console.log(user.name.common)
+        }
+    }
+}
+xhr.send();
+
+
+
+
+output
+
+Malta
+kiran.js:1255 Sweden
+kiran.js:1255 New Caledonia
+kiran.js:1255 Burkina Faso
+kiran.js:1255 Bosnia and Herzegovina
+kiran.js:1255 Jordan
+kiran.js:1255 Puerto Rico
+kiran.js:1255 Greenland
+kiran.js:1255 Iran
+kiran.js:1255 Lesotho
+kiran.js:1255 Latvia
+kiran.js:1255 Madagascar
+kiran.js:1255 Cyprus
+kiran.js:1255 Mauritius
+kiran.js:1255 Eswatini
+kiran.js:1255 Solomon Islands
+kiran.js:1255 Austria
+kiran.js:1255 Vatican City
+kiran.js:1255 Malawi
+kiran.js:1255 Botswana
+kiran.js:1255 Djibouti
+kiran.js:1255 Republic of the Congo
+kiran.js:1255 Barbados
+kiran.js:1255 Sint Maarten
+kiran.js:1255 Rwanda
+kiran.js:1255 Jersey
+kiran.js:1255 Bouvet Island
+kiran.js:1255 Yemen
+kiran.js:1255 Brazil
+kiran.js:1255 Algeria
+kiran.js:1255 Kazakhstan
+kiran.js:1255 Saint Martin
+kiran.js:1255 Curaçao
+kiran.js:1255 Fiji
+kiran.js:1255 Pakistan
+kiran.js:1255 South Georgia
+kiran.js:1255 Georgia
+kiran.js:1255 Namibia
+kiran.js:1255 Guinea-Bissau
+kiran.js:1255 Norway
+kiran.js:1255 Christmas Island
+kiran.js:1255 Liechtenstein
+kiran.js:1255 India
+kiran.js:1255 France
+kiran.js:1255 Hong Kong
+kiran.js:1255 Anguilla
+kiran.js:1255 Colombia
+kiran.js:1255 Iraq
+kiran.js:1255 Morocco
+kiran.js:1255 Libya
+kiran.js:1255 Saint Lucia
+kiran.js:1255 Marshall Islands
+kiran.js:1255 Sierra Leone
+kiran.js:1255 Cook Islands
+kiran.js:1255 Croatia
+kiran.js:1255 Turkmenistan
+kiran.js:1255 Bhutan
+kiran.js:1255 United Kingdom
+kiran.js:1255 Monaco
+kiran.js:1255 Palau
+kiran.js:1255 Gabon
+kiran.js:1255 Germany
+kiran.js:1255 Japan
+kiran.js:1255 Norfolk Island
+kiran.js:1255 Central African Republic
+kiran.js:1255 Macau
+kiran.js:1255 Syria
+kiran.js:1255 Montserrat
+kiran.js:1255 Spain
+kiran.js:1255 Gambia
+kiran.js:1255 Turks and Caicos Islands
+kiran.js:1255 French Southern and Antarctic Lands
+kiran.js:1255 Saint Pierre and Miquelon
+kiran.js:1255 Nauru
+kiran.js:1255 Faroe Islands
+kiran.js:1255 Saint Vincent and the Grenadines
+kiran.js:1255 Canada
+kiran.js:1255 Egypt
+kiran.js:1255 Papua New Guinea
+kiran.js:1255 Grenada
+kiran.js:1255 Czechia
+kiran.js:1255 Greece
+kiran.js:1255 Togo
+kiran.js:1255 Australia
+kiran.js:1255 Luxembourg
+kiran.js:1255 Niue
+kiran.js:1255 Bahrain
+kiran.js:1255 Netherlands
+kiran.js:1255 Uzbekistan
+kiran.js:1255 Hungary
+kiran.js:1255 British Virgin Islands
+kiran.js:1255 Zambia
+kiran.js:1255 Thailand
+kiran.js:1255 North Macedonia
+kiran.js:1255 Saint Barthélemy
+kiran.js:1255 Niger
+kiran.js:1255 Somalia
+kiran.js:1255 Cameroon
+kiran.js:1255 Russia
+kiran.js:1255 Burundi
+kiran.js:1255 Palestine
+kiran.js:1255 Malaysia
+kiran.js:1255 Tanzania
+kiran.js:1255 Kuwait
+kiran.js:1255 Nigeria
+kiran.js:1255 Ivory Coast
+kiran.js:1255 Denmark
+kiran.js:1255 Lithuania
+kiran.js:1255 Cape Verde
+kiran.js:1255 Angola
+kiran.js:1255 Finland
+kiran.js:1255 Peru
+kiran.js:1255 French Polynesia
+kiran.js:1255 Portugal
+kiran.js:1255 Ghana
+kiran.js:1255 Mozambique
+kiran.js:1255 Kiribati
+kiran.js:1255 Antigua and Barbuda
+kiran.js:1255 New Zealand
+kiran.js:1255 Paraguay
+kiran.js:1255 Belize
+kiran.js:1255 Northern Mariana Islands
+kiran.js:1255 Slovenia
+kiran.js:1255 Armenia
+kiran.js:1255 United Arab Emirates
+kiran.js:1255 American Samoa
+kiran.js:1255 Timor-Leste
+kiran.js:1255 Caribbean Netherlands
+kiran.js:1255 Montenegro
+kiran.js:1255 Poland
+kiran.js:1255 Pitcairn Islands
+kiran.js:1255 Slovakia
+kiran.js:1255 Bolivia
+kiran.js:1255 Chile
+kiran.js:1255 Antarctica
+kiran.js:1255 Bangladesh
+kiran.js:1255 Mexico
+kiran.js:1255 Mongolia
+kiran.js:1255 Ireland
+kiran.js:1255 Cuba
+kiran.js:1255 Guadeloupe
+kiran.js:1255 Estonia
+kiran.js:1255 El Salvador
+kiran.js:1255 Afghanistan
+kiran.js:1255 Uruguay
+kiran.js:1255 Belarus
+kiran.js:1255 DR Congo
+kiran.js:1255 Western Sahara
+kiran.js:1255 Gibraltar
+kiran.js:1255 Guam
+kiran.js:1255 Azerbaijan
+kiran.js:1255 Haiti
+kiran.js:1255 Mali
+kiran.js:1255 Dominican Republic
+kiran.js:1255 Singapore
+kiran.js:1255 Argentina
+kiran.js:1255 Iceland
+kiran.js:1255 United States
+kiran.js:1255 Jamaica
+kiran.js:1255 Qatar
+kiran.js:1255 Oman
+kiran.js:1255 Romania
+kiran.js:1255 Trinidad and Tobago
+kiran.js:1255 Maldives
+kiran.js:1255 South Sudan
+kiran.js:1255 Aruba
+kiran.js:1255 Falkland Islands
+kiran.js:1255 São Tomé and Príncipe
+kiran.js:1255 Andorra
+kiran.js:1255 Panama
+kiran.js:1255 Albania
+kiran.js:1255 Honduras
+kiran.js:1255 Mayotte
+kiran.js:1255 Equatorial Guinea
+kiran.js:1255 Heard Island and McDonald Islands
+kiran.js:1255 Senegal
+kiran.js:1255 North Korea
+kiran.js:1255 San Marino
+kiran.js:1255 British Indian Ocean Territory
+kiran.js:1255 Kenya
+kiran.js:1255 Sri Lanka
+kiran.js:1255 Saint Helena, Ascension and Tristan da Cunha
+kiran.js:1255 Lebanon
+kiran.js:1255 Comoros
+kiran.js:1255 Martinique
+kiran.js:1255 Taiwan
+kiran.js:1255 Cayman Islands
+kiran.js:1255 Nicaragua
+kiran.js:1255 United States Virgin Islands
+kiran.js:1255 Tokelau
+kiran.js:1255 Switzerland
+kiran.js:1255 Bulgaria
+kiran.js:1255 Tuvalu
+kiran.js:1255 Laos
+kiran.js:1255 Brunei
+kiran.js:1255 Guernsey
+kiran.js:1255 Nepal
+kiran.js:1255 Costa Rica
+kiran.js:1255 Cambodia
+kiran.js:1255 Saudi Arabia
+kiran.js:1255 Guinea
+kiran.js:1255 United States Minor Outlying Islands
+kiran.js:1255 Kosovo
+kiran.js:1255 Micronesia
+kiran.js:1255 Israel
+kiran.js:1255 Eritrea
+kiran.js:1255 South Korea
+kiran.js:1255 Åland Islands
+kiran.js:1255 Serbia
+kiran.js:1255 Tonga
+kiran.js:1255 Venezuela
+kiran.js:1255 Kyrgyzstan
+kiran.js:1255 Wallis and Futuna
+kiran.js:1255 Sudan
+kiran.js:1255 Belgium
+kiran.js:1255 Ukraine
+kiran.js:1255 Vanuatu
+kiran.js:1255 Bermuda
+kiran.js:1255 Tunisia
+kiran.js:1255 Mauritania
+kiran.js:1255 Indonesia
+kiran.js:1255 Uganda
+kiran.js:1255 Isle of Man
+kiran.js:1255 Myanmar
+kiran.js:1255 China
+kiran.js:1255 Svalbard and Jan Mayen
+kiran.js:1255 Seychelles
+kiran.js:1255 Cocos (Keeling) Islands
+kiran.js:1255 Zimbabwe
+kiran.js:1255 Benin
+kiran.js:1255 Ethiopia
+kiran.js:1255 South Africa
+kiran.js:1255 Guatemala
+kiran.js:1255 Chad
+kiran.js:1255 Liberia
+kiran.js:1255 French Guiana
+kiran.js:1255 Moldova
+kiran.js:1255 Suriname
+kiran.js:1255 Bahamas
+kiran.js:1255 Vietnam
+kiran.js:1255 Saint Kitts and Nevis
+kiran.js:1255 Samoa
+kiran.js:1255 Dominica
+kiran.js:1255 Réunion
+kiran.js:1255 Ecuador
+kiran.js:1255 Tajikistan
+kiran.js:1255 Philippines
+kiran.js:1255 Guyana
+kiran.js:1255 Turkey
+kiran.js:1255 Italy
+
+
+
+
+
+
+(b).  region
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all");
+
+xhr.onload = function (){
+    if (xhr.status >= 200 && xhr.status <300){
+        let data = JSON.parse(this.response)
+        for(let i=0;i<data.length;i++){
+            let user = data[i]
+            console.log(user.region)
+        }
+    }
+}
+xhr.send();
+
+
+
+
+output
+
+2kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Asia
+2kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+2kiran.js:1255 Africa
+kiran.js:1255 Oceania
+2kiran.js:1255 Europe
+4kiran.js:1255 Africa
+2kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Antarctic
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Asia
+2kiran.js:1255 Americas
+kiran.js:1255 Oceania
+kiran.js:1255 Asia
+kiran.js:1255 Antarctic
+kiran.js:1255 Asia
+2kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Asia
+2kiran.js:1255 Americas
+kiran.js:1255 Asia
+2kiran.js:1255 Africa
+kiran.js:1255 Americas
+kiran.js:1255 Oceania
+kiran.js:1255 Africa
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+2kiran.js:1255 Asia
+2kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Asia
+kiran.js:1255 Oceania
+kiran.js:1255 Africa
+2kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Europe
+kiran.js:1255 Africa
+kiran.js:1255 Americas
+kiran.js:1255 Antarctic
+kiran.js:1255 Americas
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+2kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Oceania
+kiran.js:1255 Americas
+2kiran.js:1255 Europe
+kiran.js:1255 Africa
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+3kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Africa
+2kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Asia
+2kiran.js:1255 Africa
+2kiran.js:1255 Europe
+2kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+2kiran.js:1255 Africa
+kiran.js:1255 Oceania
+kiran.js:1255 Americas
+kiran.js:1255 Oceania
+2kiran.js:1255 Americas
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+2kiran.js:1255 Asia
+kiran.js:1255 Oceania
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+2kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Europe
+2kiran.js:1255 Americas
+kiran.js:1255 Antarctic
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+2kiran.js:1255 Americas
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Europe
+2kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Europe
+2kiran.js:1255 Americas
+2kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Africa
+2kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+kiran.js:1255 Europe
+kiran.js:1255 Americas
+2kiran.js:1255 Africa
+kiran.js:1255 Antarctic
+kiran.js:1255 Africa
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+2kiran.js:1255 Africa
+kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+3kiran.js:1255 Americas
+kiran.js:1255 Oceania
+2kiran.js:1255 Europe
+kiran.js:1255 Oceania
+2kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+2kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Americas
+kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Asia
+2kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Oceania
+kiran.js:1255 Africa
+2kiran.js:1255 Europe
+kiran.js:1255 Oceania
+kiran.js:1255 Americas
+2kiran.js:1255 Africa
+kiran.js:1255 Asia
+kiran.js:1255 Africa
+kiran.js:1255 Europe
+2kiran.js:1255 Asia
+kiran.js:1255 Europe
+kiran.js:1255 Africa
+kiran.js:1255 Oceania
+4kiran.js:1255 Africa
+kiran.js:1255 Americas
+2kiran.js:1255 Africa
+kiran.js:1255 Americas
+kiran.js:1255 Europe
+2kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Oceania
+kiran.js:1255 Americas
+kiran.js:1255 Africa
+kiran.js:1255 Americas
+2kiran.js:1255 Asia
+kiran.js:1255 Americas
+kiran.js:1255 Asia
+kiran.js:1255 Europe
+
+
+
+
+(c).  subregion
+
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all");
+
+xhr.onload = function (){
+    if (xhr.status >= 200 && xhr.status <300){
+        let data = JSON.parse(this.response)
+        for(let i=0;i<data.length;i++){
+            let user = data[i]
+            console.log(user.subregion)
+        }
+    }
+}
+xhr.send();
+
+
+
+
+output
+
+Southern Europe
+kiran.js:1255 Northern Europe
+kiran.js:1255 Melanesia
+kiran.js:1255 Western Africa
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Western Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 North America
+kiran.js:1255 Southern Asia
+kiran.js:1255 Southern Africa
+kiran.js:1255 Northern Europe
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Southern Europe
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Southern Africa
+kiran.js:1255 Melanesia
+kiran.js:1255 Central Europe
+kiran.js:1255 Southern Europe
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Southern Africa
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Middle Africa
+2kiran.js:1255 Caribbean
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Northern Europe
+kiran.js:1255 undefined
+kiran.js:1255 Western Asia
+kiran.js:1255 South America
+kiran.js:1255 Northern Africa
+kiran.js:1255 Central Asia
+2kiran.js:1255 Caribbean
+kiran.js:1255 Melanesia
+kiran.js:1255 Southern Asia
+kiran.js:1255 undefined
+kiran.js:1255 Western Asia
+kiran.js:1255 Southern Africa
+kiran.js:1255 Western Africa
+kiran.js:1255 Northern Europe
+kiran.js:1255 Australia and New Zealand
+kiran.js:1255 Western Europe
+kiran.js:1255 Southern Asia
+kiran.js:1255 Western Europe
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 South America
+kiran.js:1255 Western Asia
+2kiran.js:1255 Northern Africa
+kiran.js:1255 Caribbean
+kiran.js:1255 Micronesia
+kiran.js:1255 Western Africa
+kiran.js:1255 Polynesia
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Central Asia
+kiran.js:1255 Southern Asia
+kiran.js:1255 Northern Europe
+kiran.js:1255 Western Europe
+kiran.js:1255 Micronesia
+kiran.js:1255 Middle Africa
+kiran.js:1255 Western Europe
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Australia and New Zealand
+kiran.js:1255 Middle Africa
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Western Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 Southern Europe
+kiran.js:1255 Western Africa
+kiran.js:1255 Caribbean
+kiran.js:1255 undefined
+kiran.js:1255 North America
+kiran.js:1255 Micronesia
+kiran.js:1255 Northern Europe
+kiran.js:1255 Caribbean
+kiran.js:1255 North America
+kiran.js:1255 Northern Africa
+kiran.js:1255 Melanesia
+kiran.js:1255 Caribbean
+kiran.js:1255 Central Europe
+kiran.js:1255 Southern Europe
+kiran.js:1255 Western Africa
+kiran.js:1255 Australia and New Zealand
+kiran.js:1255 Western Europe
+kiran.js:1255 Polynesia
+kiran.js:1255 Western Asia
+kiran.js:1255 Western Europe
+kiran.js:1255 Central Asia
+kiran.js:1255 Central Europe
+kiran.js:1255 Caribbean
+kiran.js:1255 Eastern Africa
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Caribbean
+kiran.js:1255 Western Africa
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Middle Africa
+kiran.js:1255 Eastern Europe
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Western Asia
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Western Asia
+2kiran.js:1255 Western Africa
+2kiran.js:1255 Northern Europe
+kiran.js:1255 Western Africa
+kiran.js:1255 Middle Africa
+kiran.js:1255 Northern Europe
+kiran.js:1255 South America
+kiran.js:1255 Polynesia
+kiran.js:1255 Southern Europe
+kiran.js:1255 Western Africa
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Micronesia
+kiran.js:1255 Caribbean
+kiran.js:1255 Australia and New Zealand
+kiran.js:1255 South America
+kiran.js:1255 Central America
+kiran.js:1255 Micronesia
+kiran.js:1255 Central Europe
+2kiran.js:1255 Western Asia
+kiran.js:1255 Polynesia
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Central Europe
+kiran.js:1255 Polynesia
+kiran.js:1255 Central Europe
+2kiran.js:1255 South America
+kiran.js:1255 undefined
+kiran.js:1255 Southern Asia
+kiran.js:1255 North America
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Northern Europe
+2kiran.js:1255 Caribbean
+kiran.js:1255 Northern Europe
+kiran.js:1255 Central America
+kiran.js:1255 Southern Asia
+kiran.js:1255 South America
+kiran.js:1255 Eastern Europe
+kiran.js:1255 Middle Africa
+kiran.js:1255 Northern Africa
+kiran.js:1255 Southern Europe
+kiran.js:1255 Micronesia
+kiran.js:1255 Western Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 Western Africa
+kiran.js:1255 Caribbean
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 South America
+kiran.js:1255 Northern Europe
+kiran.js:1255 North America
+kiran.js:1255 Caribbean
+2kiran.js:1255 Western Asia
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Caribbean
+kiran.js:1255 Southern Asia
+kiran.js:1255 Middle Africa
+kiran.js:1255 Caribbean
+kiran.js:1255 South America
+kiran.js:1255 Middle Africa
+kiran.js:1255 Southern Europe
+kiran.js:1255 Central America
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Central America
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Middle Africa
+kiran.js:1255 undefined
+kiran.js:1255 Western Africa
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Southern Europe
+2kiran.js:1255 Eastern Africa
+kiran.js:1255 Southern Asia
+kiran.js:1255 Western Africa
+kiran.js:1255 Western Asia
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Caribbean
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 Central America
+kiran.js:1255 Caribbean
+kiran.js:1255 Polynesia
+kiran.js:1255 Western Europe
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Polynesia
+2kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Northern Europe
+kiran.js:1255 Southern Asia
+kiran.js:1255 Central America
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Western Asia
+kiran.js:1255 Western Africa
+kiran.js:1255 North America
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Micronesia
+kiran.js:1255 Western Asia
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Northern Europe
+kiran.js:1255 Southeast Europe
+kiran.js:1255 Polynesia
+kiran.js:1255 South America
+kiran.js:1255 Central Asia
+kiran.js:1255 Polynesia
+kiran.js:1255 Northern Africa
+kiran.js:1255 Western Europe
+kiran.js:1255 Eastern Europe
+kiran.js:1255 Melanesia
+kiran.js:1255 North America
+kiran.js:1255 Northern Africa
+kiran.js:1255 Western Africa
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Northern Europe
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Eastern Asia
+kiran.js:1255 Northern Europe
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Australia and New Zealand
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Western Africa
+kiran.js:1255 Eastern Africa
+kiran.js:1255 Southern Africa
+kiran.js:1255 Central America
+kiran.js:1255 Middle Africa
+kiran.js:1255 Western Africa
+kiran.js:1255 South America
+kiran.js:1255 Eastern Europe
+kiran.js:1255 South America
+kiran.js:1255 Caribbean
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 Caribbean
+kiran.js:1255 Polynesia
+kiran.js:1255 Caribbean
+kiran.js:1255 Eastern Africa
+kiran.js:1255 South America
+kiran.js:1255 Central Asia
+kiran.js:1255 South-Eastern Asia
+kiran.js:1255 South America
+kiran.js:1255 Western Asia
+kiran.js:1255 Southern Europe
+
+
+
+(d).  population
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all");
+
+xhr.onload = function (){
+    if (xhr.status >= 200 && xhr.status <300){
+        let data = JSON.parse(this.response)
+        for(let i=0;i<data.length;i++){
+            let user = data[i]
+            console.log(user.name.common+" "+user.population)
+        }
+    }
+}
+xhr.send();
+
+
+
+
+output
+
+Malta 525285
+kiran.js:1255 Sweden 10353442
+kiran.js:1255 New Caledonia 271960
+kiran.js:1255 Burkina Faso 20903278
+kiran.js:1255 Bosnia and Herzegovina 3280815
+kiran.js:1255 Jordan 10203140
+kiran.js:1255 Puerto Rico 3194034
+kiran.js:1255 Greenland 56367
+kiran.js:1255 Iran 83992953
+kiran.js:1255 Lesotho 2142252
+kiran.js:1255 Latvia 1901548
+kiran.js:1255 Madagascar 27691019
+kiran.js:1255 Cyprus 1207361
+kiran.js:1255 Mauritius 1265740
+kiran.js:1255 Eswatini 1160164
+kiran.js:1255 Solomon Islands 686878
+kiran.js:1255 Austria 8917205
+kiran.js:1255 Vatican City 451
+kiran.js:1255 Malawi 19129955
+kiran.js:1255 Botswana 2351625
+kiran.js:1255 Djibouti 988002
+kiran.js:1255 Republic of the Congo 89561404
+kiran.js:1255 Barbados 287371
+kiran.js:1255 Sint Maarten 40812
+kiran.js:1255 Rwanda 12952209
+kiran.js:1255 Jersey 100800
+kiran.js:1255 Bouvet Island 0
+kiran.js:1255 Yemen 29825968
+kiran.js:1255 Brazil 212559409
+kiran.js:1255 Algeria 510713
+kiran.js:1255 Kazakhstan 18754440
+kiran.js:1255 Saint Martin 38659
+kiran.js:1255 Curaçao 155014
+kiran.js:1255 Fiji 896444
+kiran.js:1255 Pakistan 220892331
+kiran.js:1255 South Georgia 30
+kiran.js:1255 Georgia 3714000
+kiran.js:1255 Namibia 2540916
+kiran.js:1255 Guinea-Bissau 1967998
+kiran.js:1255 Norway 5379475
+kiran.js:1255 Christmas Island 2072
+kiran.js:1255 Liechtenstein 38137
+kiran.js:1255 India 1380004385
+kiran.js:1255 France 67391582
+kiran.js:1255 Hong Kong 7500700
+kiran.js:1255 Anguilla 13452
+kiran.js:1255 Colombia 50882884
+kiran.js:1255 Iraq 40222503
+kiran.js:1255 Morocco 36910558
+kiran.js:1255 Libya 6871287
+kiran.js:1255 Saint Lucia 183629
+kiran.js:1255 Marshall Islands 59194
+kiran.js:1255 Sierra Leone 7976985
+kiran.js:1255 Cook Islands 18100
+kiran.js:1255 Croatia 4047200
+kiran.js:1255 Turkmenistan 6031187
+kiran.js:1255 Bhutan 771612
+kiran.js:1255 United Kingdom 67215293
+kiran.js:1255 Monaco 39244
+kiran.js:1255 Palau 18092
+kiran.js:1255 Gabon 2225728
+kiran.js:1255 Germany 83240525
+kiran.js:1255 Japan 125836021
+kiran.js:1255 Norfolk Island 2302
+kiran.js:1255 Central African Republic 4829764
+kiran.js:1255 Macau 649342
+kiran.js:1255 Syria 17500657
+kiran.js:1255 Montserrat 4922
+kiran.js:1255 Spain 47351567
+kiran.js:1255 Gambia 2416664
+kiran.js:1255 Turks and Caicos Islands 38718
+kiran.js:1255 French Southern and Antarctic Lands 400
+kiran.js:1255 Saint Pierre and Miquelon 6069
+kiran.js:1255 Nauru 10834
+kiran.js:1255 Faroe Islands 48865
+kiran.js:1255 Saint Vincent and the Grenadines 110947
+kiran.js:1255 Canada 38005238
+kiran.js:1255 Egypt 102334403
+kiran.js:1255 Papua New Guinea 8947027
+kiran.js:1255 Grenada 112519
+kiran.js:1255 Czechia 10698896
+kiran.js:1255 Greece 10715549
+kiran.js:1255 Togo 8278737
+kiran.js:1255 Australia 25687041
+kiran.js:1255 Luxembourg 632275
+kiran.js:1255 Niue 1470
+kiran.js:1255 Bahrain 1701583
+kiran.js:1255 Netherlands 16655799
+kiran.js:1255 Uzbekistan 34232050
+kiran.js:1255 Hungary 9749763
+kiran.js:1255 British Virgin Islands 30237
+kiran.js:1255 Zambia 18383956
+kiran.js:1255 Thailand 69799978
+kiran.js:1255 North Macedonia 2077132
+kiran.js:1255 Saint Barthélemy 4255
+kiran.js:1255 Niger 24206636
+kiran.js:1255 Somalia 15893219
+kiran.js:1255 Cameroon 26545864
+kiran.js:1255 Russia 144104080
+kiran.js:1255 Burundi 11890781
+kiran.js:1255 Palestine 4803269
+kiran.js:1255 Malaysia 32365998
+kiran.js:1255 Tanzania 59734213
+kiran.js:1255 Kuwait 4270563
+kiran.js:1255 Nigeria 206139587
+kiran.js:1255 Ivory Coast 26378275
+kiran.js:1255 Denmark 5831404
+kiran.js:1255 Lithuania 2794700
+kiran.js:1255 Cape Verde 555988
+kiran.js:1255 Angola 32866268
+kiran.js:1255 Finland 5530719
+kiran.js:1255 Peru 32971846
+kiran.js:1255 French Polynesia 280904
+kiran.js:1255 Portugal 10305564
+kiran.js:1255 Ghana 31072945
+kiran.js:1255 Mozambique 31255435
+kiran.js:1255 Kiribati 119446
+kiran.js:1255 Antigua and Barbuda 97928
+kiran.js:1255 New Zealand 5084300
+kiran.js:1255 Paraguay 7132530
+kiran.js:1255 Belize 397621
+kiran.js:1255 Northern Mariana Islands 57557
+kiran.js:1255 Slovenia 2100126
+kiran.js:1255 Armenia 2963234
+kiran.js:1255 United Arab Emirates 9890400
+kiran.js:1255 American Samoa 55197
+kiran.js:1255 Timor-Leste 1318442
+kiran.js:1255 Caribbean Netherlands 25987
+kiran.js:1255 Montenegro 621718
+kiran.js:1255 Poland 37950802
+kiran.js:1255 Pitcairn Islands 56
+kiran.js:1255 Slovakia 5458827
+kiran.js:1255 Bolivia 11673029
+kiran.js:1255 Chile 19116209
+kiran.js:1255 Antarctica 1000
+kiran.js:1255 Bangladesh 164689383
+kiran.js:1255 Mexico 128932753
+kiran.js:1255 Mongolia 3278292
+kiran.js:1255 Ireland 4994724
+kiran.js:1255 Cuba 11326616
+kiran.js:1255 Guadeloupe 400132
+kiran.js:1255 Estonia 1331057
+kiran.js:1255 El Salvador 6486201
+kiran.js:1255 Afghanistan 40218234
+kiran.js:1255 Uruguay 3473727
+kiran.js:1255 Belarus 9398861
+kiran.js:1255 DR Congo 89561404
+kiran.js:1255 Western Sahara 510713
+kiran.js:1255 Gibraltar 33691
+kiran.js:1255 Guam 168783
+kiran.js:1255 Azerbaijan 10110116
+kiran.js:1255 Haiti 11402533
+kiran.js:1255 Mali 20250834
+kiran.js:1255 Dominican Republic 10847904
+kiran.js:1255 Singapore 5685807
+kiran.js:1255 Argentina 45376763
+kiran.js:1255 Iceland 366425
+kiran.js:1255 United States 329484123
+kiran.js:1255 Jamaica 2961161
+kiran.js:1255 Qatar 2881060
+kiran.js:1255 Oman 5106622
+kiran.js:1255 Romania 19286123
+kiran.js:1255 Trinidad and Tobago 1399491
+kiran.js:1255 Maldives 540542
+kiran.js:1255 South Sudan 11193729
+kiran.js:1255 Aruba 106766
+kiran.js:1255 Falkland Islands 2563
+kiran.js:1255 São Tomé and Príncipe 219161
+kiran.js:1255 Andorra 77265
+kiran.js:1255 Panama 4314768
+kiran.js:1255 Albania 2837743
+kiran.js:1255 Honduras 9904608
+kiran.js:1255 Mayotte 226915
+kiran.js:1255 Equatorial Guinea 1402985
+kiran.js:1255 Heard Island and McDonald Islands 0
+kiran.js:1255 Senegal 16743930
+kiran.js:1255 North Korea 25778815
+kiran.js:1255 San Marino 33938
+kiran.js:1255 British Indian Ocean Territory 3000
+kiran.js:1255 Kenya 53771300
+kiran.js:1255 Sri Lanka 21919000
+kiran.js:1255 Saint Helena, Ascension and Tristan da Cunha 53192
+kiran.js:1255 Lebanon 6825442
+kiran.js:1255 Comoros 869595
+kiran.js:1255 Martinique 378243
+kiran.js:1255 Taiwan 23503349
+kiran.js:1255 Cayman Islands 65720
+kiran.js:1255 Nicaragua 6624554
+kiran.js:1255 United States Virgin Islands 106290
+kiran.js:1255 Tokelau 1411
+kiran.js:1255 Switzerland 17500657
+kiran.js:1255 Bulgaria 6927288
+kiran.js:1255 Tuvalu 11792
+kiran.js:1255 Laos 7275556
+kiran.js:1255 Brunei 437483
+kiran.js:1255 Guernsey 62999
+kiran.js:1255 Nepal 29136808
+kiran.js:1255 Costa Rica 5094114
+kiran.js:1255 Cambodia 16718971
+kiran.js:1255 Saudi Arabia 34813867
+kiran.js:1255 Guinea 13132792
+kiran.js:1255 United States Minor Outlying Islands 300
+kiran.js:1255 Kosovo 1775378
+kiran.js:1255 Micronesia 115021
+kiran.js:1255 Israel 9216900
+kiran.js:1255 Eritrea 5352000
+kiran.js:1255 South Korea 51780579
+kiran.js:1255 Åland Islands 29458
+kiran.js:1255 Serbia 6908224
+kiran.js:1255 Tonga 105697
+kiran.js:1255 Venezuela 28435943
+kiran.js:1255 Kyrgyzstan 6591600
+kiran.js:1255 Wallis and Futuna 11750
+kiran.js:1255 Sudan 43849269
+kiran.js:1255 Belgium 11555997
+kiran.js:1255 Ukraine 44134693
+kiran.js:1255 Vanuatu 307150
+kiran.js:1255 Bermuda 63903
+kiran.js:1255 Tunisia 11818618
+kiran.js:1255 Mauritania 4649660
+kiran.js:1255 Indonesia 273523621
+kiran.js:1255 Uganda 45741000
+kiran.js:1255 Isle of Man 85032
+kiran.js:1255 Myanmar 54409794
+kiran.js:1255 China 1402112000
+kiran.js:1255 Svalbard and Jan Mayen 2562
+kiran.js:1255 Seychelles 98462
+kiran.js:1255 Cocos (Keeling) Islands 544
+kiran.js:1255 Zimbabwe 14862927
+kiran.js:1255 Benin 12123198
+kiran.js:1255 Ethiopia 114963583
+kiran.js:1255 South Africa 59308690
+kiran.js:1255 Guatemala 16858333
+kiran.js:1255 Chad 16425859
+kiran.js:1255 Liberia 5057677
+kiran.js:1255 French Guiana 254541
+kiran.js:1255 Moldova 2617820
+kiran.js:1255 Suriname 586634
+kiran.js:1255 Bahamas 393248
+kiran.js:1255 Vietnam 97338583
+kiran.js:1255 Saint Kitts and Nevis 53192
+kiran.js:1255 Samoa 198410
+kiran.js:1255 Dominica 71991
+kiran.js:1255 Réunion 840974
+kiran.js:1255 Ecuador 17643060
+kiran.js:1255 Tajikistan 9537642
+kiran.js:1255 Philippines 109581085
+kiran.js:1255 Guyana 786559
+kiran.js:1255 Turkey 84339067
+kiran.js:1255 Italy 59554023
